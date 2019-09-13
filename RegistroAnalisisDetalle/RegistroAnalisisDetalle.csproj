@@ -211,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Consultas\" />
+    <Folder Include="Registros\" />
+    <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
