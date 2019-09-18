@@ -21,6 +21,7 @@
                         <asp:LinkButton ID="BusquedaButton" CssClass="btn btn-info btn-block btn-md" data-toggle="modal" data-target="#myModal" CausesValidation="False" runat="server" Text="<span class='glyphicon glyphicon-search'></span>" PostBackUrl="~/Consultas/ConsultaPacientes.aspx" />
                     </div>
                 </div>
+         </div>
 
                 <%--Nombre--%>
                 <div class="form-group">
