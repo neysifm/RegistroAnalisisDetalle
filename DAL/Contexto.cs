@@ -13,10 +13,10 @@ namespace DAL
         public DbSet<Analisis> Analisi { get; set; }
         public DbSet<TiposAnalisis> TipoAnalisis { get; set; }
         public DbSet<Pacientes> Paciente { get; set; }
+        public DbSet<Pago> Pago { get; set; }
 
         public Contexto() : base("Constr")
-        {
-            
+        {      
         }
     }
 }
