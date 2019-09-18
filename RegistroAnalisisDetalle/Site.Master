@@ -51,7 +51,24 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="#">Registros</a></li>
+                        <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="/Registros/RegistroPacientes.aspx">Pacientes </a>
+								<a class="dropdown-item" href="/Registros/RegistroTiposAnalisis.aspx">Tipos de Analisis </a>
+								<a class="dropdown-item" href="/Registros/RegistrosAnalisis.aspx">Analisis </a>
+							</div>
+						</li>
+                        <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultas
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="/Consultas/ConsultaPacientes.aspx">Pacientes </a>
+								<a class="dropdown-item" href="/Consultas/ConsultasTiposAnalisis.aspx">Tipos de Analisis </a>
+								<a class="dropdown-item" href="/Consultas/ConsultaAnalisis.aspx">Analisis </a>
+							</div>
+						</li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>

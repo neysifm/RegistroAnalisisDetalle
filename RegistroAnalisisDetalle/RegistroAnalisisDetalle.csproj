@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
@@ -106,7 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Consultas\ConsultaAnalisis.aspx" />
     <Content Include="Consultas\ConsultaPacientes.aspx" />
+    <Content Include="Consultas\ConsultasTiposAnalisis.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -126,7 +134,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Registros\RegistroAnalisis.aspx" />
     <Content Include="Registros\RegistroPacientes.aspx" />
+    <Content Include="Registros\RegistroTiposAnalisis.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -171,12 +181,26 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Consultas\ConsultaAnalisis.aspx.cs">
+      <DependentUpon>ConsultaAnalisis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaAnalisis.aspx.designer.cs">
+      <DependentUpon>ConsultaAnalisis.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ConsultaPacientes.aspx.cs">
       <DependentUpon>ConsultaPacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Consultas\ConsultaPacientes.aspx.designer.cs">
       <DependentUpon>ConsultaPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultasTiposAnalisis.aspx.cs">
+      <DependentUpon>ConsultasTiposAnalisis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultasTiposAnalisis.aspx.designer.cs">
+      <DependentUpon>ConsultasTiposAnalisis.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -196,12 +220,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registros\RegistroAnalisis.aspx.cs">
+      <DependentUpon>RegistroAnalisis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroAnalisis.aspx.designer.cs">
+      <DependentUpon>RegistroAnalisis.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registros\RegistroPacientes.aspx.cs">
       <DependentUpon>RegistroPacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Registros\RegistroPacientes.aspx.designer.cs">
       <DependentUpon>RegistroPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registros\RegistroTiposAnalisis.aspx.cs">
+      <DependentUpon>RegistroTiposAnalisis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroTiposAnalisis.aspx.designer.cs">
+      <DependentUpon>RegistroTiposAnalisis.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -217,6 +255,7 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Utilitarios\Utils.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -1,4 +1,6 @@
-﻿using Entidades;
+﻿using BLL;
+using Entidades;
+using RegistroAnalisisDetalle.Utilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +16,6 @@ namespace RegistroAnalisisDetalle.Registros
         {
             if (!Page.IsPostBack)
             {
-                LlenarCombos();
-
                 int id = Utils.ToInt(Request.QueryString["id"]);
                 if (id > 0)
                 {
@@ -37,69 +37,80 @@ namespace RegistroAnalisisDetalle.Registros
         protected void NuevoButton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            ErrorLabel.Text = string.Empty;
         }
 
         protected void GuadarButton_Click(object sender, EventArgs e)
         {
             BLL.RepositorioBase<Pacientes> repositorio = new BLL.RepositorioBase<Pacientes>();
             Pacientes paciente = new Pacientes();
+            paciente = LlenaClase();
             bool paso = false;
 
-            LlenaClase(paciente);
-
-            if (paciente.PacienteId == 0)
+            if (paciente.PacienteId <= 0)
+            {
+                paciente.FechaIngreso = DateTime.Now;
                 paso = repositorio.Guardar(paciente);
+                if (paso)
+                {
+                    Limpiar();
+                }
+            }
             else
                 paso = repositorio.Modificar(paciente);
 
             if (paso)
             {
-                MostrarMensaje(TiposMensaje.Success, "Transaccion Exitosa!");
+                MostrarMensaje(TiposMensaje.Success, "Registro Guardado Correctamente!");
                 Limpiar();
             }
             else
-                MostrarMensaje(TiposMensaje.Error, "No fue posible terminar la transacción");
+                MostrarMensaje(TiposMensaje.Error, "No Fue Posible Guardar El Registro");
 
         }
 
         protected void EliminarButton_Click(object sender, EventArgs e)
         {
-            BLL.RepositorioBase<Pacientes> repositorio = new BLL.RepositorioBase<Pacientes>();
-            int id = Utils.ToInt(IdTextBox.Text);
+            int id = 0;
 
-            var categoria = repositorio.Buscar(id);
+            if (string.IsNullOrEmpty(this.IdTextBox.Text) || string.IsNullOrWhiteSpace(IdTextBox.Text))
+            {
+                MostrarMensaje(TiposMensaje.Error, "El Registro no Puede Ser Eliminado!!");
+                return;
+            }
+            id = Utils.ToInt(IdTextBox.Text);
+            RepositorioBase<Pacientes> repositorio = new RepositorioBase<Pacientes>();
 
-            if (categoria == null)
+            if (repositorio.Buscar(id) == null)
+            {
                 MostrarMensaje(TiposMensaje.Error, "Registro no encontrado");
-            else
-                repositorio.Eliminar(id);
+                return;
+            }
+            bool eliminado = repositorio.Eliminar(id);
+            if (eliminado)
+            {
+                MostrarMensaje(TiposMensaje.Success, "Registro Eliminado!!");
+                Limpiar();
+                return;
+            }
         }
 
-        private void LlenaClase(Pacientes paciente)
+        private Pacientes LlenaClase()
         {
+            Pacientes paciente = new Pacientes();
             paciente.PacienteId = Utils.ToInt(IdTextBox.Text);
-            paciente.Descripcion = DescripcionTextBox.Text;
-            paciente.Presupuesto = Utils.ToDecimal(PresupuestoTextBox.Text);
-            paciente.Tipo = (TiposTransacciones)Enum.Parse(typeof(TiposTransacciones), TipoDropDownList.SelectedValue);
-
+            paciente.Nombre = NombreTextBox.Text;
+            return paciente;
         }
         private void LlenaCampos(Pacientes paciente)
         {
-            IdTextBox.Text = paciente.CategoriaId.ToString();
-            DescripcionTextBox.Text = paciente.Descripcion;
-            PresupuestoTextBox.Text = paciente.Presupuesto.ToString("N2");
-            TipoDropDownList.SelectedValue = Convert.ToInt16(paciente.Tipo).ToString();
+            IdTextBox.Text = paciente.PacienteId.ToString();
+            NombreTextBox.Text = paciente.Nombre;
         }
         private void Limpiar()
         {
             IdTextBox.Text = "";
-            DescripcionTextBox.Text = "";
-            PresupuestoTextBox.Text = "";
-        }
-        void LlenarCombos()
-        {
-            TipoDropDownList.DataSource = Enum.GetValues(typeof(TiposTransacciones));
-            TipoDropDownList.DataBind();
+            NombreTextBox.Text = "";
         }
 
         void MostrarMensaje(TiposMensaje tipo, string mensaje)

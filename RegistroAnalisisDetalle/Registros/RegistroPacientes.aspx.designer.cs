@@ -31,13 +31,13 @@ namespace RegistroAnalisisDetalle.Registros {
         protected global::System.Web.UI.WebControls.LinkButton BusquedaButton;
         
         /// <summary>
-        /// DescripcionTextBox control.
+        /// NombreTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DescripcionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
         
         /// <summary>
         /// RFVDescripcion control.
@@ -47,42 +47,6 @@ namespace RegistroAnalisisDetalle.Registros {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDescripcion;
-        
-        /// <summary>
-        /// TipoDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoDropDownList;
-        
-        /// <summary>
-        /// PresupuestoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PresupuestoTextBox;
-        
-        /// <summary>
-        /// RFV_MontoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFV_MontoTextBox;
-        
-        /// <summary>
-        /// REV_MontoTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator REV_MontoTextBox;
         
         /// <summary>
         /// SumaryValidation control.
