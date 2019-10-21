@@ -8,33 +8,34 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    [Serializable]
     public class AnalisisDetalle
     {
 
         [Key]
         public int AnalisisDetalleId { get; set; }
         public int AnalisisId { get; set; }
-        public int PacienteId { get; set; }
-        public int TipoId { get; set; }
-        public DateTime Fecha { get; set; }
-        public decimal Balance { get; set; }
         [ForeignKey("AnalisisId")]
         public virtual Analisis Analisis { get; set; }
-
-        public AnalisisDetalle(int analisisDetalleId, int analisisId, int pacienteId, int tipoId, DateTime fecha, decimal balance)
-        {
-            AnalisisDetalleId = analisisDetalleId;
-            AnalisisId = analisisId;
-            PacienteId = pacienteId;
-            TipoId = tipoId;
-            Fecha = fecha;
-            Balance = balance;
-        }
+        public int TipoId { get; set; }
+        [ForeignKey("TipoId")]
+        public virtual TiposAnalisis TipoAnalisis { get; set; }
+        public string Resultado { get; set; }
 
         public AnalisisDetalle()
         {
-            Fecha = DateTime.Now;
-            Balance = 0;
+            AnalisisDetalleId = 0;
+            AnalisisId = 0;
+            TipoId = 0;
+            Resultado = string.Empty;
+        }
+
+        public AnalisisDetalle(int analisisDetalleId, int analisisId, int tipoId, string resultado)
+        {
+            AnalisisDetalleId = analisisDetalleId;
+            AnalisisId = analisisId;
+            TipoId = tipoId;
+            Resultado = resultado;
         }
     }
 }

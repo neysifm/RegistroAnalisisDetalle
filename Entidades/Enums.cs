@@ -11,4 +11,5 @@ namespace Entidades
         Success,
         Error
     }
+
 }

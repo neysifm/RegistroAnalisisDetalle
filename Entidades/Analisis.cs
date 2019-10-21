@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    [Serializable]
     public class Analisis
     {
         [Key]
@@ -28,9 +29,14 @@ namespace Entidades
             AnalisisDetalle = new List<AnalisisDetalle>();
         }
 
-        public void AgregarDetalle(int AnalisisDetalleId, int tipoId, DateTime fecha, decimal balance)
+        public void AgregarDetalle(int analisisDetalleId, int analisisId, int tipoId, string resultado)
         {
-            this.AnalisisDetalle.Add(new Entidades.AnalisisDetalle(AnalisisDetalleId, this.AnalisisId, this.PacienteId, tipoId, fecha, balance));
+            this.AnalisisDetalle.Add(new AnalisisDetalle(analisisDetalleId, analisisId, tipoId, resultado));
+        }
+
+        public void RemoverDetalle(int Index)
+        {
+            this.AnalisisDetalle.RemoveAt(Index);
         }
     }
 }

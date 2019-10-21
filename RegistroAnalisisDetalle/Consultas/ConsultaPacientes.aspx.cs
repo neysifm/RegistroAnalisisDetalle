@@ -28,7 +28,7 @@ namespace RegistroAnalisisDetalle.Consultas
                 switch (BuscarPorDropDownList.SelectedIndex)
                 {
                     case 0://ID
-                        id = Utilitarios.Utils.ToInt(FiltroTextBox.Text);
+                        id = Utils.ToInt(FiltroTextBox.Text);
                         filtro = c => c.PacienteId == id;
                         break;
                     case 1://Nombre

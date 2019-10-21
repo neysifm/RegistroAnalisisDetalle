@@ -64,6 +64,8 @@
             </div>
 
         </div>
+         <%--MENSAJES--%>
+            <asp:Label ID="MostrarMensajes" runat="server" Text="Label" Visible="false"></asp:Label>
     </div>
 
 </asp:Content>

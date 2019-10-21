@@ -10,61 +10,115 @@
 namespace RegistroAnalisisDetalle.Registros {
     
     
-    public partial class RegistroPacientes1 {
+    public partial class RegistroPagos {
         
         /// <summary>
-        /// IdTextBox control.
+        /// PagosIdTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdTextBox;
+        protected global::System.Web.UI.WebControls.TextBox PagosIdTextBox;
         
         /// <summary>
-        /// BusquedaButton control.
+        /// BuscarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton BusquedaButton;
+        protected global::System.Web.UI.WebControls.Button BuscarButton;
         
         /// <summary>
-        /// NombreTextBox control.
+        /// FechaTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreTextBox;
+        protected global::System.Web.UI.WebControls.TextBox FechaTextBox;
         
         /// <summary>
-        /// RFVDescripcion control.
+        /// PacienteTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RFVDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox PacienteTextBox;
         
         /// <summary>
-        /// SumaryValidation control.
+        /// BuscarPaciente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary SumaryValidation;
+        protected global::System.Web.UI.WebControls.Button BuscarPaciente;
         
         /// <summary>
-        /// ErrorLabel control.
+        /// AnalisisDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorLabel;
+        protected global::System.Web.UI.WebControls.DropDownList AnalisisDropDownList;
+        
+        /// <summary>
+        /// BalanceTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox BalanceTextBox;
+        
+        /// <summary>
+        /// MontoPagarTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MontoPagarTextBox;
+        
+        /// <summary>
+        /// AgregarPagoButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AgregarPagoButton;
+        
+        /// <summary>
+        /// ScriptManger control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManger;
+        
+        /// <summary>
+        /// UpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel;
+        
+        /// <summary>
+        /// DetalleGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView DetalleGridView;
         
         /// <summary>
         /// NuevoButton control.

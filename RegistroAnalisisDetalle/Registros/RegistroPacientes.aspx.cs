@@ -1,6 +1,5 @@
 ﻿using BLL;
 using Entidades;
-using RegistroAnalisisDetalle.Utilitarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +41,7 @@ namespace RegistroAnalisisDetalle.Registros
 
         protected void GuadarButton_Click(object sender, EventArgs e)
         {
-            BLL.RepositorioBase<Pacientes> repositorio = new BLL.RepositorioBase<Pacientes>();
+            RepositorioBase<Pacientes> repositorio = new RepositorioBase<Pacientes>();
             Pacientes paciente = new Pacientes();
             paciente = LlenaClase();
             bool paso = false;
@@ -97,9 +96,11 @@ namespace RegistroAnalisisDetalle.Registros
 
         private Pacientes LlenaClase()
         {
-            Pacientes paciente = new Pacientes();
-            paciente.PacienteId = Utils.ToInt(IdTextBox.Text);
-            paciente.Nombre = NombreTextBox.Text;
+            Pacientes paciente = new Pacientes
+            {
+                PacienteId = Utils.ToInt(IdTextBox.Text),
+                Nombre = NombreTextBox.Text
+            };
             return paciente;
         }
         private void LlenaCampos(Pacientes paciente)

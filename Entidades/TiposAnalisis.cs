@@ -7,32 +7,30 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    [Serializable]
     public class TiposAnalisis
     {
         [Key]
 
         public int TipoId { get; set; }
-        public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public decimal Precio { get; set; }
-        public DateTime FechaIngreso { get; set; }
+        public decimal Monto { get; set; }
+        public DateTime FechaRegistro { get; set; }
 
-        public TiposAnalisis(int tipoId, string nombre, string descripcion, decimal precio, DateTime fechaIngreso)
+        public TiposAnalisis(int tipoId, string descripcion, decimal monto, DateTime fechaRegistro)
         {
             TipoId = tipoId;
-            Nombre = nombre;
             Descripcion = descripcion;
-            Precio = precio;
-            FechaIngreso = fechaIngreso;
+            Monto = monto;
+            FechaRegistro = fechaRegistro;
         }
 
         public TiposAnalisis()
         {
             TipoId = 0;
-            Nombre = String.Empty;
-            Descripcion = String.Empty;
-            Precio = 0;
-            FechaIngreso = DateTime.Now;
+            Descripcion = string.Empty;
+            Monto = 0;
+            FechaRegistro = DateTime.Now;
         }
     }
 }
