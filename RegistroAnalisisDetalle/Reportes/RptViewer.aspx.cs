@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using DAL;
+using BLL;
 using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,10 @@ namespace RegistroAnalisisDetalle.Reportes
         {
             if (!Page.IsPostBack)
             {
-                var lista = Pago.GetList(x => true);
-                MyReportViewer.ProcessingMode = ProcessingMode.Local;
-               
-                MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\ReportePagos.rdlc");
-                
-                MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Pagos", lista));
+                BLL.RepositorioPagos repositorio = new BLL.RepositorioPagos();
+                MyReportViewer.ProcessingMode = ProcessingMode.Local;        
+                MyReportViewer.LocalReport.ReportPath = Server.MapPath(@"~\Reportes\ReportePagos.rdlc");        
+                MyReportViewer.LocalReport.DataSources.Add(new ReportDataSource("Pagos", repositorio.GetList(x => true)));
                 MyReportViewer.LocalReport.Refresh();
             }
         }
